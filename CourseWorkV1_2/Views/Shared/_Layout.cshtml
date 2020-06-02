@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/style.css")
+    @Scripts.Render("~/Scripts/script.cs")
+
+</head>
+<body>
+    <div class="title">
+        <ul class=" links">
+            <li>@Html.ActionLink("AuctiOnLine", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+            <li>@Html.ActionLink("Add", "Add", "Home")</li>
+            <li>@Html.ActionLink("Message", "Message", "Home")</li>
+            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+            <li>@Html.ActionLink("Edit lot", "EditLot", "Home")</li>
+            <li>@Html.ActionLink("Edit user", "EditUser", "Home")</li>
+        </ul>
+    </div>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Students NAU</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

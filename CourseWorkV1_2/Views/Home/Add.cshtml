@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <section class="add__room">
+        <div class="wrapper">
+            <div class="width">
+                <div class="title">
+                    <h1>ADD LOT</h1>
+
+                    <div class="links">
+                        <a href="index.html" class="every__time">EACH HOUR</a>
+                        <a href="add.html" class="add__lot">ADD LOT</a>
+                        <a href="message.html" class="message">MESSAGE</a>
+                    </div>
+                </div>
+
+                <div class="line__timer">
+                    <div class="add__choose">
+                        <a href="index.html">AUCTION</a>
+                        <a href="rate.html">MY RATES</a>
+                    </div>
+                    <div class="timer">
+                        <span class="text">Auction ends in</span>
+                        <div id="countdown" class="countdown">
+                            <div class="countdown-number">
+                                <span class="hours countdown-time"></span>
+                            </div>
+                            <span>:</span>
+                            <div class="countdown-number">
+                                <span class="minutes countdown-time"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border">
+                    <div class="add">
+                        <h1>ADD LOT</h1>
+                        <form method="post">
+                            <div class="flex">
+                                <div>
+                                    <p>Name lot</p>
+                                    <input type="text" name="Name">
+
+                                    <p>TYPE lot</p>
+                                    <select name="type">
+                                        @foreach (var type in CourseWorkV1_2.Controllers.HomeController.GetAllTypes())
+                                        {
+                                        <option value="@type">@type.Name</option>
+                                        }
+                                    </select>
+
+                                    <p>MIN price</p>
+                                    <input name="MinPrice">
+                                </div>
+
+                                <div>
+                                    <div class="input-file-row-1">
+
+                                        <div class="upload-file-container">
+                                            <img id="image" src="#" alt="" />
+                                            <div class="upload-file-container-text">
+                                                <span>Download image</span>
+                                                <input type="file" name="mage" class="photo" id="imgInput" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="DONE">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="vert">
+
+                <div class="top_users-select-box">
+                    <div class="top_users-select">Filter</div>
+                    <div class="top_users-select_dropdown">
+                        <div class="top_users-select_dropdown-item">
+                            <form method="get">
+                                <p>Title</p>
+                                <input name="name" type="text">
+                                <p>Group</p>
+                                <input name="group" type="text">
+                                <p>MIN bid</p>
+                                <input name="rate" type="text">
+                                <button>Готово</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

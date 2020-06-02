@@ -1,0 +1,69 @@
+﻿@using System.Web.Security;
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Content/style.css">
+    <link rel="stylesheet" href="Content/new-style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+        <section class="add__room">
+            <div class="wrapper">
+                <div class="new_width">
+                    <div class="title">
+                        <h1>EDIT</h1>
+
+                    </div>
+
+                    <div class="edit">
+                        <select name="ID">
+                            @foreach (var user in CourseWorkV1_2.Controllers.EditUserController.GetAllUserName())
+                            {
+                                <option value="i1">@user</option>
+                            }
+                        </select>
+                        <div class="edit__title">
+                            <span class="edit__name">ID</span>
+                            <span class="edit__type">Name</span>
+                            <span class="max">ROOT</span>
+                        </div>
+                        <form>
+                            <div class="boxE">
+                                <div class="dataE__box">
+                                    <span>ID</span>
+                                </div>
+                                <div class="dataE__name">
+                                    <span>name</span>
+                                </div>
+                                <div class="dataE__name">
+                                    <input type="checkbox" checked>
+                                </div>
+                                <div class="boxE__box">
+                                    <button>Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <script src="script.js"></script>
+    }
+    else
+    {
+        <h1>Sorry, you haven't roots</h1>
+    }
+</body>
+</html>

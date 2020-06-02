@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Content/style.css">
+    <link rel="stylesheet" href="Content/new-style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <section class="add__room">
+        <div class="wrapper">
+            <div class="new_width">
+                <div class="title">
+                    <h1>EDIT</h1>
+
+                </div>
+
+                <div class="edit">
+                    <select name="LotID">
+                        <option value="l1">LotID</option>
+                        <option value="l2">LotID</option>
+                        <option value="l3">LotID</option>
+                        <option value="l4">LotID</option>
+                        <option value="l5">LotID</option>
+                    </select>
+                    <div class="edit__title">
+                        <span class="edit__name">ID</span>
+                        <span class="edit__type">UserId</span>
+                        <span class="edit__type">WinId</span>
+                        <span class="edit__type">Price</span>
+                        <span class="edit__type">MinPrice</span>
+                    </div>
+                    @foreach (var lot in CourseWorkV1_2.Controllers.HomeController.GetAllLots())
+                    {
+                        <form method="post">
+                            <div class="boxE">
+                                <div class="dataE__box">
+                                    <span name="Id">@lot.Id</span>
+                                </div>
+                                <div class="dataE__name">
+                                    <span>@lot.UserId</span>
+                                </div>
+                                <div class="dataE__name">
+                                    <span>@lot.IdWin</span>
+                                </div>
+                                <div class="dataE__name">
+                                    <input type="number" value="@lot.RealPrice" name=" RealPrice">
+                                </div>
+                                <div class="dataE__name">
+                                    <input type="number" value="@lot.MinPrice" name=" MinPrice">
+                                </div>
+                                <div class="boxE__box">
+                                    <input type="submit" value="DONE">
+                                </div>
+                            </div>
+                        </form>
+                    }
+                    </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
